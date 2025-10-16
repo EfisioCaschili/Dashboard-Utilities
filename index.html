@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Utilities</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo GBTS">
+    </div>
+
+    <h1 class="title">Dashboard Utilities</h1>
+
+    <!-- Selettore script -->
+    
+    <div class="form-row">
+        <select id="scriptSelector" >
+            <option value="" disabled selected hidden>Select Utility</option>
+            <option value="Create_PDF_Report/main.py">Daily Report</option>
+            <option value="Overview SlotMeeting/app.py">Overview Slot Meeting</option>
+            <option value="WEEKLY REPORT/main.py">Weekly Report</option>   
+            <option value="Check Logbook SH/Check.py">Check Logbook SH</option>
+        </select>
+
+        <!-- Campi dinamici -->
+        <div id="fieldsContainer"></div>
+
+        <button onclick="runScript()">Execute</button>
+    </div>
+
+   
+    <div id="outputBox">Output...</div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
